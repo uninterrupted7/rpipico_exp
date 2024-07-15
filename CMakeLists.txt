@@ -9,16 +9,12 @@ if(CMAKE_VERSION VERSION_LESS "3.11.0")
     set(CMAKE_INCLUDE_CURRENT_DIR ON)
 endif()
 
-find_package(Qt5 COMPONENTS Wigdets REQUIRED)
+#find_package(COMPONENTS REQUIRED)
 
 # initialize the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-#add_subdirectory(blink)
-#add_subdirectory(uart_exp)
+add_subdirectory(blink)
+add_subdirectory(uart_exp)
+add_subdirectory(dht11-pico)
 
-add_executable(read_port
-               read_port.c
-)
-
-target_link_libraries(read_port Qt5::Widgets)
